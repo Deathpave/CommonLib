@@ -3,3 +3,4 @@
 Add encryption method that takes salt as well
 Add decryption method that takes salt as well
 
+Update DNS with gethostentry instead of dns.resolve
