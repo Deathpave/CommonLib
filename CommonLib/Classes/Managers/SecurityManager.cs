@@ -1,4 +1,5 @@
-﻿using CommonLib.Classes.Encryption;
+﻿using CommonLib.Classes.Decryption;
+using CommonLib.Classes.Encryption;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,18 +11,32 @@ namespace CommonLib.Classes.Managers
     public class SecurityManager
     {
         private Encrypt _encrypt;
+        private Decrypt _decrypt;
 
-        public void Test()
+        public SecurityManager()
         {
-            // Creates a new instance of encryption classs
             _encrypt = new Encrypt();
-            //
-            // Do code here
-            //
-            // Disposes of data in encryption class
-            _encrypt.Dispose();
-            // Nulls instance of encryption class
-            _encrypt = null;
+            _decrypt = new Decrypt();
+        }
+
+        public string EncryptString(string input, string password)
+        {
+            return _encrypt.EncryptString(input, password);
+        }
+
+        public string EncryptString(string input, string password, int itterations)
+        {
+            return _encrypt.EncryptString(input, password, itterations);
+        }
+
+        public string DecryptString(string input, string password)
+        {
+            return _decrypt.DecryptString(input, password);
+        }
+
+        public string DecryptString(string input, string password, int itterations)
+        {
+            return _decrypt.DecryptString(input, password, itterations);
         }
     }
 }

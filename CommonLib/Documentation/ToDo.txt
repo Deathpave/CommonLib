@@ -1,3 +1,5 @@
 ﻿!!! To do list !!!
 
 Add encryption method that takes salt as well
+Add decryption method that takes salt as well
+

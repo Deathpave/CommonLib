@@ -8,18 +8,12 @@ using System.Threading.Tasks;
 
 namespace CommonLib.Classes.Encryption
 {
-    internal class Encrypt : IDisposable
+    internal class Encrypt
     {
-        public void Dispose()
-        {
-            // Null all that can be nulled
-        }
 
         // Salt byte array
         byte[] salt = new byte[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
 
-        // Creates stream to "write" the data
-        MemoryStream memoryStream = new MemoryStream();
 
         // Rijndael class
         RijndaelManaged rijndael = new RijndaelManaged();
@@ -34,6 +28,9 @@ namespace CommonLib.Classes.Encryption
 
             // Vector gets set
             rijndael.IV = rfc.GetBytes(16);
+
+            // Creates stream to "write" the data
+            MemoryStream memoryStream = new MemoryStream();
 
             // Creates stream to "write" the data            
             CryptoStream cryptoStream = new CryptoStream(memoryStream, rijndael.CreateEncryptor(), CryptoStreamMode.Write);
@@ -62,6 +59,9 @@ namespace CommonLib.Classes.Encryption
 
             // Vector gets set
             rijndael.IV = rfc.GetBytes(16);
+
+            // Creates stream to "write" the data
+            MemoryStream memoryStream = new MemoryStream();
 
             // Creates stream to "write" the data            
             CryptoStream cryptoStream = new CryptoStream(memoryStream, rijndael.CreateEncryptor(), CryptoStreamMode.Write);
