@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Classes\Managers\" />
+    <Folder Include="Classes\Interfaces\" />
   </ItemGroup>
 
 </Project>
