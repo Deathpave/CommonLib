@@ -10,15 +10,12 @@ namespace CommonLib.Classes.Encryption
 {
     internal class Encrypt
     {
-
-        // Salt byte array
-        byte[] salt = new byte[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
-
-
         // Rijndael class
         RijndaelManaged rijndael = new RijndaelManaged();
         public string EncryptString(string input, string password)
         {
+            // Salt byte array
+            byte[] salt = new byte[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
 
             // Derived bytes to make key and vector
             Rfc2898DeriveBytes rfc = new Rfc2898DeriveBytes(password, salt);
@@ -50,6 +47,8 @@ namespace CommonLib.Classes.Encryption
 
         public string EncryptString(string input, string password, int itterations)
         {
+            // Salt byte array
+            byte[] salt = new byte[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
 
             // Derived bytes to make key and vector
             Rfc2898DeriveBytes rfc = new Rfc2898DeriveBytes(password, salt, itterations);

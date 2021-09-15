@@ -10,14 +10,14 @@ namespace CommonLib.Classes.Decryption
 {
     internal class Decrypt
     {
-        // salt byte array
-        byte[] salt = new byte[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
-
         // rijndael class
         RijndaelManaged rijndael = new RijndaelManaged();
 
         public string DecryptString(string input, string password)
         {
+            // salt byte array
+            byte[] salt = new byte[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
+
             // derived bytes to make key and vector
             Rfc2898DeriveBytes rfc = new Rfc2898DeriveBytes(password, salt);
 
@@ -54,6 +54,9 @@ namespace CommonLib.Classes.Decryption
 
         public string DecryptString(string input, string password, int itterations)
         {
+            // salt byte array
+            byte[] salt = new byte[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
+
             // derived bytes to make key and vector
             Rfc2898DeriveBytes rfc = new Rfc2898DeriveBytes(password, salt, itterations);
 

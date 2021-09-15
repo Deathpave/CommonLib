@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CommonLib.Classes.Managers
 {
-    public class SecurityManager
+    public class SecurityManager : IDisposable
     {
         private Encrypt _encrypt;
         private Decrypt _decrypt;
@@ -37,6 +37,12 @@ namespace CommonLib.Classes.Managers
         public string DecryptString(string input, string password, int itterations)
         {
             return _decrypt.DecryptString(input, password, itterations);
+        }
+
+        public void Dispose()
+        {
+            _encrypt = null;
+            _decrypt = null;
         }
     }
 }
