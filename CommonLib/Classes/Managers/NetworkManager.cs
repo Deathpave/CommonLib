@@ -1,5 +1,6 @@
 ﻿using CommonLib.Classes.Network_Tools;
 using System;
+using System.Net.NetworkInformation;
 using System.Text;
 
 namespace CommonLib.Classes.Managers
