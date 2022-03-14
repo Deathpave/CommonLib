@@ -5,13 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="bin\Release\net5.0\CommonLib.deps.json" />
+    <Compile Remove="bin\Release\**" />
+    <EmbeddedResource Remove="bin\Release\**" />
+    <None Remove="bin\Release\**" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="bin\Release\net5.0\CommonLib.dll" />
-    <None Include="bin\Release\net5.0\CommonLib.pdb" />
-    <None Include="bin\Release\net5.0\ref\CommonLib.dll" />
   </ItemGroup>
 
 </Project>

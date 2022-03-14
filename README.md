@@ -4,6 +4,8 @@ This project is free to use and redistribute.
 Any suggestions or wishes for new content:  
 Contact Deathpave on Github
 
+[a link](CommonLib/Bin/Release/CommonLib.dll)
+
 ## Managers
 
 ### HookManager
