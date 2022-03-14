@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="bin\Debug\net5.0\CommonLib.dll" />
     <None Include="bin\Release\net5.0\CommonLib.dll" />
   </ItemGroup>
 

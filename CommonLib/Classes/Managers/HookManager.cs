@@ -39,8 +39,8 @@ namespace CommonLib.Classes.Managers
 
         public void Dispose()
         {
+            KeyboardHook.KeyPressed -= InternalHook;
             _keyboardhook = null;
-            KeyPressed -= InternalHook;
         }
     }
 }

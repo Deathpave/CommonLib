@@ -16,7 +16,7 @@ namespace LibTester
         static void Main(string[] args)
         {
             WatcherManager manager = new WatcherManager();
-            manager.StartWatcher(@"C:\Watcher",true);
+            manager.StartWatcher(@"C:\Watcher", true);
             while (true)
             {
 

@@ -10,22 +10,30 @@ using System.Threading.Tasks;
 
 namespace CommonLib.Classes.Managers
 {
-    public class WatcherManager
+    public class WatcherManager : IDisposable
     {
-        FileSystemWatcher watcher;
-        FolderWatcher folderWatcher;
+        private FileSystemWatcher _watcher;
+        private FolderWatcher _folderWatcher;
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public void StartWatcher(string folderPath, bool includeSubDirectories)
         {
-            folderWatcher = new FolderWatcher();
-            folderWatcher.GetData += HandleWatcher;
-            watcher = folderWatcher.CreateWatcher(folderPath, includeSubDirectories);
-            var x = watcher.WaitForChanged(WatcherChangeTypes.All);
+            _folderWatcher = new FolderWatcher();
+            _folderWatcher.GetData += HandleWatcher;
+            _watcher = _folderWatcher.CreateWatcher(folderPath, includeSubDirectories);
+            var x = _watcher.WaitForChanged(WatcherChangeTypes.All);
         }
 
         private void HandleWatcher(object sender, PropertyChangedEventArgs e)
         {
-            Console.WriteLine(sender.ToString());
+            PropertyChanged?.Invoke(sender, null);
+        }
+
+        public void Dispose()
+        {
+            _folderWatcher.GetData -= HandleWatcher;
+            _watcher = null;
+            _folderWatcher = null;
         }
     }
 }
