@@ -23,7 +23,7 @@ namespace CommonLib.Classes.Managers
             var x = watcher.WaitForChanged(WatcherChangeTypes.All);
         }
 
-        public void HandleWatcher(object sender, PropertyChangedEventArgs e)
+        private void HandleWatcher(object sender, PropertyChangedEventArgs e)
         {
             Console.WriteLine(sender.ToString());
         }
