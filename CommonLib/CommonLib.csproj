@@ -4,4 +4,14 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Include="bin\Release\net5.0\CommonLib.deps.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Release\net5.0\CommonLib.dll" />
+    <None Include="bin\Release\net5.0\CommonLib.pdb" />
+    <None Include="bin\Release\net5.0\ref\CommonLib.dll" />
+  </ItemGroup>
+
 </Project>
