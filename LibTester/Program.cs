@@ -17,10 +17,16 @@ namespace LibTester
         {
             WatcherManager manager = new WatcherManager();
             manager.StartWatcher(@"C:\Watcher", true);
+            manager.PropertyChanged += Manager_PropertyChanged;
             while (true)
             {
 
             }
+        }
+
+        private static void Manager_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            Console.WriteLine(sender);
         }
     }
 }
