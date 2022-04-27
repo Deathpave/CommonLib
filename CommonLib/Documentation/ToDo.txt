@@ -6,3 +6,5 @@ Add decryption method that takes salt as well
 Update DNS with gethostentry instead of dns.resolve
 
 Watcher event instead of writing to console
+
+Filemanager, add lock and unlock files
